@@ -27,7 +27,7 @@ install() {
   # twemproxy
   git clone --recursive https://github.com/twitter/twemproxy
   cd twemproxy
-  ./autoreconf -fvi
+  autoreconf -fvi
   ./configure --prefix=$ASDF_INSTALL_PATH
   make -s install
 }
