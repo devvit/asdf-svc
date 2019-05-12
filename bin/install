@@ -23,13 +23,6 @@ install() {
   cd sphinx
   ./configure --prefix=$ASDF_INSTALL_PATH
   make -s install || exit 1
-
-  # twemproxy
-  git clone --recursive https://github.com/twitter/twemproxy
-  cd twemproxy
-  autoreconf -fvi
-  ./configure --prefix=$ASDF_INSTALL_PATH
-  make -s install
 }
 
 install $ASDF_INSTALL_TYPE $ASDF_INSTALL_VERSION $ASDF_INSTALL_PATH
