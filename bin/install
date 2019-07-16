@@ -19,10 +19,10 @@ install() {
   PKG_CONFIG_PATH=$ASDF_INSTALL_PATH/lib/pkgconfig make -s install || exit 1
 
   # sphinx
-  git clone --recursive https://github.com/sphinxsearch/sphinx
-  cd sphinx
-  ./configure --prefix=$ASDF_INSTALL_PATH
-  make -s install || exit 1
+  # git clone --recursive https://github.com/sphinxsearch/sphinx
+  # cd sphinx
+  # ./configure --prefix=$ASDF_INSTALL_PATH
+  # make -s install || exit 1
 }
 
 install $ASDF_INSTALL_TYPE $ASDF_INSTALL_VERSION $ASDF_INSTALL_PATH
