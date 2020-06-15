@@ -24,7 +24,7 @@ install() {
   tar -xzf pgroonga*.tar.gz
   rm -rf pgroonga*.tar.gz
   cd pgroonga*
-  PKG_CONFIG_PATH=$ASDF_INSTALL_PATH/lib/pkgconfig make -s install || exit 1
+  PKG_CONFIG_PATH=$ASDF_INSTALL_PATH/lib/pkgconfig HAVE_MSGPACK=1 make -s install || exit 1
 
   # sphinx
   # git clone --recursive https://github.com/sphinxsearch/sphinx
