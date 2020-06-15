@@ -23,7 +23,7 @@ install() {
   curl -fSL -JO https://packages.groonga.org/source/pgroonga/pgroonga-2.2.5.tar.gz
   tar -xzf pgroonga*.tar.gz
   rm -rf pgroonga*.tar.gz
-  cd pgroonga
+  cd pgroonga*
   PKG_CONFIG_PATH=$ASDF_INSTALL_PATH/lib/pkgconfig make -s install || exit 1
 
   # sphinx
