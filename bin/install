@@ -8,9 +8,14 @@ install() {
   cd $build_dir
 
   # groonga
-  git clone --recursive https://github.com/groonga/groonga
-  cd groonga
-  ./autogen.sh
+  # git clone --recursive https://github.com/groonga/groonga
+  # cd groonga
+  # ./autogen.sh
+  # ./configure --without-ssl --prefix=$ASDF_INSTALL_PATH
+  curl -fSL -JO https://packages.groonga.org/source/groonga/groonga-$version.tar.gz
+  tar -xzf groonga*.tar.gz
+  rm -rf groonga*.tar.gz
+  cd groonga*
   ./configure --without-ssl --prefix=$ASDF_INSTALL_PATH
   make -s install || exit 1
 
