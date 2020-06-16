@@ -19,10 +19,10 @@ install() {
   ./configure --without-ssl --prefix=$ASDF_INSTALL_PATH
   make -s install || exit 1
 
-  # git clone --recursive https://github.com/pgroonga/pgroonga
-  curl -fSL -JO https://packages.groonga.org/source/pgroonga/pgroonga-2.2.5.tar.gz
-  tar -xzf pgroonga*.tar.gz
-  rm -rf pgroonga*.tar.gz
+  git clone --recursive https://github.com/pgroonga/pgroonga
+  # curl -fSL -JO https://packages.groonga.org/source/pgroonga/pgroonga-2.2.5.tar.gz
+  # tar -xzf pgroonga*.tar.gz
+  # rm -rf pgroonga*.tar.gz
   cd pgroonga*
   PKG_CONFIG_PATH=$ASDF_INSTALL_PATH/lib/pkgconfig HAVE_MSGPACK=1 make -s install || exit 1
 
