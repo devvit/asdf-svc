@@ -16,7 +16,7 @@ install() {
   tar -xzf groonga*.tar.gz
   rm -rf groonga*.tar.gz
   cd groonga*
-  ./configure --without-ssl --prefix=$ASDF_INSTALL_PATH
+  ./configure --without-ssl --without-luajit --prefix=$ASDF_INSTALL_PATH
   make -s install || exit 1
 
   git clone --recursive https://github.com/pgroonga/pgroonga
