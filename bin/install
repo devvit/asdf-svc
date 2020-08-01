@@ -11,26 +11,17 @@ install() {
   # git clone --recursive https://github.com/groonga/groonga
   # cd groonga
   # ./autogen.sh
-  # ./configure --without-ssl --prefix=$ASDF_INSTALL_PATH
+  # ./configure --without-ssl --prefix=$install_dir
   curl -fSL -JO https://packages.groonga.org/source/groonga/groonga-$version.tar.gz
   tar -xzf groonga*.tar.gz
   rm -rf groonga*.tar.gz
   cd groonga*
-  ./configure --without-ssl --without-luajit --prefix=$ASDF_INSTALL_PATH
+  ./configure --without-ssl --without-luajit --prefix=$install_dir
   make -s install || exit 1
 
   git clone --recursive https://github.com/pgroonga/pgroonga
-  # curl -fSL -JO https://packages.groonga.org/source/pgroonga/pgroonga-2.2.5.tar.gz
-  # tar -xzf pgroonga*.tar.gz
-  # rm -rf pgroonga*.tar.gz
   cd pgroonga*
-  PKG_CONFIG_PATH=$ASDF_INSTALL_PATH/lib/pkgconfig make -s install || exit 1
-
-  # sphinx
-  # git clone --recursive https://github.com/sphinxsearch/sphinx
-  # cd sphinx
-  # ./configure --prefix=$ASDF_INSTALL_PATH
-  # make -s install || exit 1
+  PKG_CONFIG_PATH=$install_dir/lib/pkgconfig make -s install || exit 1
 }
 
 install $ASDF_INSTALL_TYPE $ASDF_INSTALL_VERSION $ASDF_INSTALL_PATH
