@@ -21,6 +21,7 @@ install() {
 
   git clone --recursive https://github.com/pgroonga/pgroonga
   cd pgroonga*
+  git checkout 2.3.0
   PKG_CONFIG_PATH=$install_dir/lib/pkgconfig make -s install || exit 1
 }
 
